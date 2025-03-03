@@ -12,14 +12,6 @@ const authMiddleware = (req, res, next) => {
   next();
 };
 
-// Admin Middleware
-const adminMiddleware = (req, res, next) => {
-  if (req.headers.authorization !== 'admin') {
-    return res.status(403).json({ message: 'Forbidden' });
-  }
-  next();
-};
-
 // Function to Generate Routes Based on Configuration
 const generateRoutes = (config) => {
   config.nodes.forEach((node) => {
